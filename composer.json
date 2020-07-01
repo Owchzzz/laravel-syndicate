@@ -1,0 +1,20 @@
+{
+    "name": "owchzzz/laravel-syndicate",
+    "description": "Laravel Syndicate is a package that gives the power of teams and organizations to laravel projects",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Richard Abear",
+            "email": "owchzzz@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "Owchzzz\\Syndicate\\": "src"
+        }
+    },
+    "require": {
+        "illuminate/support": "^8.0@dev"
+    }
+}
