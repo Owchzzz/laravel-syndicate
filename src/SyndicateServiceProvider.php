@@ -17,5 +17,8 @@ class SyndicateServiceProvider extends ServiceProvider
         ], 'syndicate-lighthouse');
 
         $this->loadMigrationsFrom(__DIR__.'./../database/migrations');
+
+        $this->app->register(SyndicateEventsProvider::class);
+        $this->app->register(SyndicateAuthProvider::class);
     }
 }

@@ -15,17 +15,17 @@ abstract class MemberEvent
     /**
      * @var Model $entity the removed entity
      */
-    protected Model $entity;
+    public Model $entity;
     
     /**
      * @var Organization $organization the organization that was acting upon the removal
      */ 
-    protected Organization $organization;
+    public Organization $organization;
 
     /**
      * @var Model $entity (optional) The notifying entity.
      */
-    protected Model $notifier;
+    public Model $notifier;
     
     /**
      * Create a new event instance.

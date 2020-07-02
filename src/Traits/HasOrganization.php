@@ -51,11 +51,12 @@ trait HasOrganization
      */
     public function belongsToOrganization($organization)
     {
-        $id = $organization;
+        $id = $organization; // Organization Assumes its an id
 
-        if ($organization instanceof Organization) { // Organization check
+        if ($organization instanceof Organization) { // Organization check if its a model
             $id = $organization->getKey();
         }
+        
         return $this->organizations()->where($this->getKeyName(), $id)->count() ? true : false;
     }
 }

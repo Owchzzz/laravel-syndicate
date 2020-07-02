@@ -17,7 +17,7 @@ class Organization extends Model
      */
     public function members():MorphToMany
     {
-        return $this->morphedByMany(config('syndicate.user_model'), 'model', 'organization_models');
+        return $this->morphedByMany(config('syndicate.user_model'), 'model', 'organization_models')->withPivot(['invite_key', 'pending', 'owner']);
     }
 
     /**

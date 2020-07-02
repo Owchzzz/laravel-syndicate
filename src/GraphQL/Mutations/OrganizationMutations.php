@@ -53,7 +53,10 @@ class OrganizationMutations
         if ($user->can('update', $organization)) {
             $manager = new MemberManager($organization, $user);
             $manager->invite(MemberAccountValidator::findOrCreateFromEmail($args['email']));
+            return ['message' => 'SUCCESS'];
         }
+
+        throw new Exception("User does not have permission to access this organization");
     }
 
     public function acceptInvitation($rootValue, array $args)

@@ -15,9 +15,9 @@ use Ramsey\Uuid\Uuid;
 
 class MemberManager
 {
-    protected Organization $organization;
+    public Organization $organization;
     
-    protected Model $manager;
+    public Model $manager;
 
     /**
      * Validates the invitiation token given and fires the necessary evnets
@@ -79,7 +79,7 @@ class MemberManager
         if($invite_options['pending']) {
             $invite_options['invite_key'] = Uuid::uuid1();
         }
-
+        \Log::info($entity);
         $this->organization->members()->attach([$entity->getKey() => $invite_options]);
         event(new MemberInvited($entity, $this->organization, $this->manager));
     }
