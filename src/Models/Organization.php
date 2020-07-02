@@ -26,7 +26,7 @@ class Organization extends Model
      * @param Model $manager
      * @return MemberManager
      */
-    public function getMemberManager(Model $manager): MemberManager
+    public function getMemberManager(Model $manager = null): MemberManager
     {
         return new MemberManager($this, $manager);
     }

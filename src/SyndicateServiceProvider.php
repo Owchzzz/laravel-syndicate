@@ -12,6 +12,10 @@ class SyndicateServiceProvider extends ServiceProvider
             __DIR__.'./../views/mail' => resource_path('mail/')
         ], 'syndicate');
 
+        $this->publishes([
+            __DIR__.'./../graphql' => 'graphql/',
+        ], 'syndicate-lighthouse');
+
         $this->loadMigrationsFrom(__DIR__.'./../database/migrations');
     }
 }
