@@ -1,0 +1,19 @@
+type Organization {
+    name: String
+}
+
+extend type Mutation {
+    createOrganization(): Organization 
+        @create
+    updateOrganization(): Organization 
+        @update
+    removeFromOrganization(): Organization 
+        @delete
+    inviteIntoOrganization(): InvitationStatus
+    acceptInvitation(): InvitationStatus
+}
+
+type InvitationStatus {
+    message: String
+}
+
