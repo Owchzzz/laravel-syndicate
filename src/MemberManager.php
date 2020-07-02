@@ -2,6 +2,7 @@
 namespace Owchzzz\Syndicate;
 
 use Exception;
+use Faker\Provider\Uuid as ProviderUuid;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Crypt;
 use Illuminate\Database\Eloquent\Model;
@@ -10,6 +11,7 @@ use Owchzzz\Syndicate\Models\Organization;
 use Owchzzz\Syndicate\Events\Organization\MemberInvited;
 use Owchzzz\Syndicate\Events\Organization\MemberRemoved;
 use Owchzzz\Syndicate\Exceptions\InvalidInvitationKeyException;
+use Ramsey\Uuid\Uuid;
 
 class MemberManager
 {
@@ -71,9 +73,13 @@ class MemberManager
     public function invite(Model $entity)
     {
         $invite_options = [
-            'pending' => config('syndicate.invites', false)
+            'pending' => config('syndicate.invites', false),
         ];
 
+        if($invite_options['pending']) {
+            $invite_options['invite_key'] = Uuid::uuid1();
+        }
+        
         $this->organization->members()->attach([$entity->getKey() => $invite_options]);
         event(new MemberInvited($entity, $this->organization, $this->manager));
     }
