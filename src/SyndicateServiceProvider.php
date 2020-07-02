@@ -8,8 +8,9 @@ class SyndicateServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->publishes([
-            __DIR__.'./../config/syndicate.php' => config_path('syndicate.php')
-        ]);
+            __DIR__.'./../config/syndicate.php' => config_path('syndicate.php'),
+            __DIR__.'./../views/mail' => resource_path('mail/')
+        ], 'syndicate');
 
         $this->loadMigrationsFrom(__DIR__.'./../database/migrations');
     }

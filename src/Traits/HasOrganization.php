@@ -56,6 +56,6 @@ trait HasOrganization
         if ($organization instanceof Organization) { // Organization check
             $id = $organization->getKey();
         }
-        return $this->organizations()->where('id', $id)->count() ? true : false;
+        return $this->organizations()->where($this->getKeyName(), $id)->count() ? true : false;
     }
 }
