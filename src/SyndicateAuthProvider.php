@@ -1,8 +1,8 @@
 <?php
-namespace Owchzzz\Syndicate;
+namespace RichardAbear\Syndicate;
 
-use Owchzzz\Syndicate\Models\Organization;
-use Owchzzz\Syndicate\Policies\OrganizationPolicy;
+use RichardAbear\Syndicate\Models\Organization;
+use RichardAbear\Syndicate\Policies\OrganizationPolicy;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider;
 
 class SyndicateAuthProvider extends AuthServiceProvider

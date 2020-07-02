@@ -1,10 +1,10 @@
 <?php
-namespace Owchzzz\Syndicate\Models;
+namespace RichardAbear\Syndicate\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
-use Owchzzz\Syndicate\MemberManager;
+use RichardAbear\Syndicate\MemberManager;
 
 class Organization extends Model
 {

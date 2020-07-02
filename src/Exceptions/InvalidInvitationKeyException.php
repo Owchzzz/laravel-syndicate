@@ -1,5 +1,5 @@
 <?php
-namespace Owchzzz\Syndicate\Exceptions;
+namespace RichardAbear\Syndicate\Exceptions;
 
 use Exception;
 

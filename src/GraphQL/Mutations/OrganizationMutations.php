@@ -1,12 +1,12 @@
 <?php
 
-namespace Owchzzz\Syndicate\GraphQL\Mutations;
+namespace RichardAbear\Syndicate\GraphQL\Mutations;
 
 use App\Models\User;
 use Exception;
-use Owchzzz\Syndicate\MemberAccountValidator;
-use Owchzzz\Syndicate\MemberManager;
-use Owchzzz\Syndicate\Models\Organization;
+use RichardAbear\Syndicate\MemberAccountValidator;
+use RichardAbear\Syndicate\MemberManager;
+use RichardAbear\Syndicate\Models\Organization;
 
 class OrganizationMutations
 {

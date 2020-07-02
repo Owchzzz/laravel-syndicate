@@ -1,10 +1,10 @@
 <?php
-namespace Owchzzz\Syndicate\Listeners;
+namespace RichardAbear\Syndicate\Listeners;
 
-use Owchzzz\Syndicate\Mail\MemberInvitation;
+use RichardAbear\Syndicate\Mail\MemberInvitation;
 use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\Mail;
-use Owchzzz\Syndicate\Events\Organization\MemberInvited;
+use RichardAbear\Syndicate\Events\Organization\MemberInvited;
 
 class SendMemberInvite
 {

@@ -9,11 +9,11 @@ extend type Mutation {
     updateOrganization(input: OrganizationInput @spread): Organization 
         @update
     removeFromOrganization(input: RemoveFromOrganizationInput @spread): Organization 
-        @field(resolver: "Owchzzz\\Syndicate\\GraphQL\\Mutations\\OrganizationMutations@removeFromOrganization")
+        @field(resolver: "RichardAbear\\Syndicate\\GraphQL\\Mutations\\OrganizationMutations@removeFromOrganization")
     inviteIntoOrganization(input: InviteIntoOrganizationInput @spread): InvitationStatus
-        @field(resolver: "Owchzzz\\Syndicate\\GraphQL\\Mutations\\OrganizationMutations@inviteIntoOrganization")
+        @field(resolver: "RichardAbear\\Syndicate\\GraphQL\\Mutations\\OrganizationMutations@inviteIntoOrganization")
     acceptInvitation(input: AcceptInvitationInput @spread): InvitationStatus
-        @field(resolver: "Owchzzz\\Syndicate\\GraphQL\\Mutations\\OrganizationMutations@acceptInvitation")
+        @field(resolver: "RichardAbear\\Syndicate\\GraphQL\\Mutations\\OrganizationMutations@acceptInvitation")
 }
 
 type InvitationStatus {

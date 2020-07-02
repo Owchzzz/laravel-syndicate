@@ -1,8 +1,8 @@
 <?php
-namespace Owchzzz\Syndicate\Traits;
+namespace RichardAbear\Syndicate\Traits;
 
 use Illuminate\Database\Eloquent\Model;
-use Owchzzz\Syndicate\Models\Organization;
+use RichardAbear\Syndicate\Models\Organization;
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
 use phpDocumentor\Reflection\Types\Mixed_;
 

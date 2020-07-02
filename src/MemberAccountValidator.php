@@ -1,5 +1,5 @@
 <?php
-namespace Owchzzz\Syndicate;
+namespace RichardAbear\Syndicate;
 
 use Illuminate\Support\Facades\Hash;
 use phpseclib\Crypt\Random;

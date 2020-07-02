@@ -1,8 +1,8 @@
 <?php
 
-namespace Owchzzz\Syndicate\Events\Organization;
+namespace RichardAbear\Syndicate\Events\Organization;
 
-use Owchzzz\Syndicate\Events\Organization\MemberEvent;
+use RichardAbear\Syndicate\Events\Organization\MemberEvent;
 
 class MemberRemoved extends MemberEvent
 {

@@ -1,9 +1,9 @@
 <?php
-namespace Owchzzz\Syndicate;
+namespace RichardAbear\Syndicate;
 
 use Illuminate\Foundation\Support\Providers\EventServiceProvider;
-use Owchzzz\Syndicate\Events\Organization\MemberInvited;
-use Owchzzz\Syndicate\Listeners\SendMemberInvite;
+use RichardAbear\Syndicate\Events\Organization\MemberInvited;
+use RichardAbear\Syndicate\Listeners\SendMemberInvite;
 
 class SyndicateEventsProvider extends EventServiceProvider
 {

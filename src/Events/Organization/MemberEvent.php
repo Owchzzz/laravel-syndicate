@@ -1,12 +1,12 @@
 <?php
 
-namespace Owchzzz\Syndicate\Events\Organization;
+namespace RichardAbear\Syndicate\Events\Organization;
 
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Broadcasting\InteractsWithSockets;
-use Owchzzz\Syndicate\Models\Organization;
+use RichardAbear\Syndicate\Models\Organization;
 
 abstract class MemberEvent
 {

@@ -1,12 +1,12 @@
 <?php
 
-namespace Owchzzz\Syndicate\Mail;
+namespace RichardAbear\Syndicate\Mail;
 
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
-use Owchzzz\Syndicate\Models\Organization;
+use RichardAbear\Syndicate\Models\Organization;
 
 class MemberInvitation extends Mailable
 {

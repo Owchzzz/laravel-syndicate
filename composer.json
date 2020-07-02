@@ -5,14 +5,14 @@
     "authors": [
         {
             "name": "Richard Abear",
-            "email": "owchzzz@gmail.com"
+            "email": "richardabear@gmail.com"
         }
     ],
     "minimum-stability": "dev",
     "prefer-stable": true,
     "autoload": {
         "psr-4": {
-            "Owchzzz\\Syndicate\\": "src"
+            "RichardAbear\\Syndicate\\": "src"
         }
     },
     "require": {
@@ -22,7 +22,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Owchzzz\\Syndicate\\SyndicateServiceProvider"
+                "RichardAbear\\Syndicate\\SyndicateServiceProvider"
             ]
         }
     }

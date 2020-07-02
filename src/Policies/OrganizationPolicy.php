@@ -1,11 +1,11 @@
 <?php
 
-namespace Owchzzz\Syndicate\Policies;
+namespace RichardAbear\Syndicate\Policies;
 
 use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 use Illuminate\Database\Eloquent\Model;
-use Owchzzz\Syndicate\Models\Organization;
+use RichardAbear\Syndicate\Models\Organization;
 
 class OrganizationPolicy
 {
@@ -23,7 +23,6 @@ class OrganizationPolicy
 
     public function update(Model $user, Organization $organization)
     {
-        return true;
         if (! $organization->members()->where('model_id', $user->id)->count()) {
             return false;
         }
