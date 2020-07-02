@@ -28,7 +28,7 @@ class MemberManager
     public static function validateInviteToken(string $token): void {
         $key = Crypt::decrypt($token);
         
-        $invitation = DB::table('organization_models')->where('invite_key', $key)->firsts();
+        $invitation = DB::table('organization_models')->where('invite_key', $key)->first();
 
         if(! $invitation) {
             throw new InvalidInvitationKeyException();
@@ -79,7 +79,7 @@ class MemberManager
         if($invite_options['pending']) {
             $invite_options['invite_key'] = Uuid::uuid1();
         }
-        
+
         $this->organization->members()->attach([$entity->getKey() => $invite_options]);
         event(new MemberInvited($entity, $this->organization, $this->manager));
     }
