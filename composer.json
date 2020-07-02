@@ -9,12 +9,21 @@
         }
     ],
     "minimum-stability": "dev",
+    "prefer-stable": true,
     "autoload": {
         "psr-4": {
             "Owchzzz\\Syndicate\\": "src"
         }
     },
     "require": {
-        "illuminate/support": "^8.0@dev"
+        "illuminate/support": "^7.18",
+        "illuminate/database": "^7.18"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Owchzzz\\Syndicate\\SyndicateServiceProvider"
+            ]
+        }
     }
 }
