@@ -8,9 +8,11 @@ extend type Mutation {
     updateOrganization(): Organization 
         @update
     removeFromOrganization(): Organization 
-        @delete
+        @field(resolver: "Owchzzz\\Syndicate\\GraphQL\\Mutations\\OrganizationMutations@removeFromOrganization")
     inviteIntoOrganization(): InvitationStatus
+        @field(resolver: "Owchzzz\\Syndicate\\GraphQL\\Mutations\\OrganizationMutations@inviteIntoOrganization")
     acceptInvitation(): InvitationStatus
+        @field(resolver: "Owchzzz\\Syndicate\\GraphQL\\Mutations\\OrganizationMutations@acceptInvitation")
 }
 
 type InvitationStatus {
