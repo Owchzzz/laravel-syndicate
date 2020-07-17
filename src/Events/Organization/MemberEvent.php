@@ -6,6 +6,7 @@ use Illuminate\Queue\SerializesModels;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Broadcasting\InteractsWithSockets;
+use RichardAbear\Syndicate\Contracts\OrganizationInterface;
 use RichardAbear\Syndicate\Models\Organization;
 
 abstract class MemberEvent
@@ -20,7 +21,7 @@ abstract class MemberEvent
     /**
      * @var Organization $organization the organization that was acting upon the removal
      */ 
-    public Organization $organization;
+    public OrganizationInterface $organization;
 
     /**
      * @var Model $entity (optional) The notifying entity.
@@ -32,7 +33,7 @@ abstract class MemberEvent
      *
      * @return void
      */
-    public function __construct(Model $model, Organization $organization, Model $notifier = null)
+    public function __construct(Model $model, OrganizationInterface $organization, Model $notifier = null)
     {
         $this->entity = $model;
         $this->organization = $organization;

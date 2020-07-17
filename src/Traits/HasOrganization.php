@@ -2,9 +2,10 @@
 namespace RichardAbear\Syndicate\Traits;
 
 use Illuminate\Database\Eloquent\Model;
+use phpDocumentor\Reflection\Types\Mixed_;
 use RichardAbear\Syndicate\Models\Organization;
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
-use phpDocumentor\Reflection\Types\Mixed_;
+use RichardAbear\Syndicate\Contracts\OrganizationInterface;
 
 trait HasOrganization
 {
@@ -15,7 +16,8 @@ trait HasOrganization
             static::created(function (Model $model) {
                 $user_instance = config('syndicate.user_model');
                 if ($model instanceof $user_instance) {
-                    $organization = new Organization(['name' => 'My Organization', 'is_permanent' => true]);
+                    $OrganizationInstance = app(OrganizationInterface::class);
+                    $organization = new $OrganizationInstance(['name' => 'My Organization', 'is_permanent' => true]);
                     $organization->save();
                     $organization->members()->attach([$model->getKey() => ['owner' => true]]);
                 }
@@ -30,7 +32,7 @@ trait HasOrganization
      */
     public function organizations(): MorphToMany
     {
-        return $this->morphToMany(Organization::class, 'model', 'organization_models')->withPivot('owner');
+        return $this->morphToMany(config('syndicate.organization_model'), 'model', 'organization_models')->withPivot('owner');
     }
 
     /**
@@ -38,7 +40,7 @@ trait HasOrganization
      *
      * @return Organization
      */
-    public function permanentOrganization(): Organization
+    public function permanentOrganization()
     {
         return $this->organizations()->where('owner', true)->first();
     }

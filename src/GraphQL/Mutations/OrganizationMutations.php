@@ -2,11 +2,13 @@
 
 namespace RichardAbear\Syndicate\GraphQL\Mutations;
 
-use App\Models\User;
 use Exception;
-use RichardAbear\Syndicate\MemberAccountValidator;
+use App\Models\User;
+use Illuminate\Database\Eloquent\Model;
+use RichardAbear\Syndicate\Contracts\OrganizationInterface;
 use RichardAbear\Syndicate\MemberManager;
 use RichardAbear\Syndicate\Models\Organization;
+use RichardAbear\Syndicate\MemberAccountValidator;
 
 class OrganizationMutations
 {
@@ -21,10 +23,10 @@ class OrganizationMutations
 
     public function removeFromOrganization($rootValue, array $args)
     {
-        $organization = Organization::findOrFail($args['organization_id']);
+        $organization = app(OrganizationInterface::class)::findOrFail($args['organization_id']);
 
         /**
-         * @var User $user
+         * @var Model $user
          */
         $user = auth()->user();
 
@@ -43,7 +45,7 @@ class OrganizationMutations
 
     public function inviteIntoOrganization($rootValue, array $args)
     {
-        $organization = Organization::findOrFail($args['organization_id']);
+        $organization = app(OrganizationInterface::class)::findOrFail($args['organization_id']);
 
         /**
          * @var User $user

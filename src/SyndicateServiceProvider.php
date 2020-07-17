@@ -2,6 +2,9 @@
 namespace RichardAbear\Syndicate;
 
 use Illuminate\Support\ServiceProvider;
+use RichardAbear\Syndicate\SyndicateAuthProvider;
+use RichardAbear\Syndicate\SyndicateEventsProvider;
+use RichardAbear\Syndicate\Contracts\OrganizationInterface;
 
 class SyndicateServiceProvider extends ServiceProvider
 {
@@ -16,9 +19,15 @@ class SyndicateServiceProvider extends ServiceProvider
             __DIR__.'./../graphql' => 'graphql/',
         ], 'syndicate-lighthouse');
 
+        $this->publishes([
+            __DIR__.'./Models' => 'app/Models',
+        ], 'syndicate-models');
+
         $this->loadMigrationsFrom(__DIR__.'./../database/migrations');
 
         $this->app->register(SyndicateEventsProvider::class);
         $this->app->register(SyndicateAuthProvider::class);
+
+        $this->app->bind(OrganizationInterface::class, config('syndicate.organization_model'));
     }
 }

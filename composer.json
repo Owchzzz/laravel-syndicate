@@ -17,7 +17,9 @@
     },
     "require": {
         "illuminate/support": "^7.18",
-        "illuminate/database": "^7.18"
+        "illuminate/database": "^7.18",
+        "illuminate/mail": "^7.18",
+        "illuminate/bus": "^7.18"
     },
     "extra": {
         "laravel": {

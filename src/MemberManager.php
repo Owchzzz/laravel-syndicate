@@ -2,16 +2,17 @@
 namespace RichardAbear\Syndicate;
 
 use Exception;
-use Faker\Provider\Uuid as ProviderUuid;
+use Ramsey\Uuid\Uuid;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Crypt;
 use Illuminate\Database\Eloquent\Model;
-use RichardAbear\Syndicate\Events\Organization\MemberAcceptedInvite;
+use Faker\Provider\Uuid as ProviderUuid;
 use RichardAbear\Syndicate\Models\Organization;
+use RichardAbear\Syndicate\Contracts\OrganizationInterface;
 use RichardAbear\Syndicate\Events\Organization\MemberInvited;
 use RichardAbear\Syndicate\Events\Organization\MemberRemoved;
+use RichardAbear\Syndicate\Events\Organization\MemberAcceptedInvite;
 use RichardAbear\Syndicate\Exceptions\InvalidInvitationKeyException;
-use Ramsey\Uuid\Uuid;
 
 class MemberManager
 {
@@ -46,7 +47,7 @@ class MemberManager
         }
     }
 
-    public function __construct(Organization $organization, Model $manager)
+    public function __construct(OrganizationInterface $organization, Model $manager)
     {
         $this->organization = $organization;
         $this->manager = $manager;

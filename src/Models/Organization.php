@@ -2,11 +2,12 @@
 namespace RichardAbear\Syndicate\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use RichardAbear\Syndicate\MemberManager;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
-use RichardAbear\Syndicate\MemberManager;
+use RichardAbear\Syndicate\Contracts\OrganizationInterface;
 
-class Organization extends Model
+class Organization extends Model implements OrganizationInterface
 {
     protected $fillable = ['name', 'is_permanent'];
 
