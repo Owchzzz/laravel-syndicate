@@ -29,6 +29,7 @@ class OrganizationMutations
          * @var Model $user
          */
         $user = auth()->user();
+        // Added new feature
 
         if ($user->can('update', $organization)) {
             $UserModel = config('syndicate.user_model');
